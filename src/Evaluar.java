@@ -129,12 +129,12 @@ public class Evaluar {
 	}
 	
 	@Test
-	public void existe() {
+	public void contar() {
 		String nombre_archivo="testaArchivo";
 		try
 		{
 			PrintWriter pw = new PrintWriter(nombre_archivo);
-			pw.write("32 43 34 564 23 1 64 2 432");
+			pw.write("32 43 1 564 32 1 32 2 432");
 			pw.flush();
 			
 			
@@ -143,22 +143,32 @@ public class Evaluar {
 			
 		}
 		
-		assertEquals("Error ejecutando existe(nombre_archivo)", true, Ejercicios.existe(nombre_archivo,"23"));
-		assertEquals("Error ejecutando existe(nombre_archivo)", true, Ejercicios.existe(nombre_archivo,"432"));
+		assertEquals("Error", 2, Ejercicios.contar(nombre_archivo,"1"));
+		assertEquals("Error", 1, Ejercicios.contar(nombre_archivo,"432"));
 		
-		assertEquals("Error ejecutando existe(nombre_archivo)", false, Ejercicios.existe(nombre_archivo,"2312"));
-		assertEquals("Error ejecutando existe(nombre_archivo)", false, Ejercicios.existe(nombre_archivo,"321"));
+		assertEquals("Error", 3, Ejercicios.contar(nombre_archivo,"32"));
+		assertEquals("Error", 0, Ejercicios.contar(nombre_archivo,"33"));
 		
 	}
 	
 	@Test
-	public void getNumeroMenor() {
+	public void getPromedio() {
 		String nombre_archivo="testaArchivo";
+		String nombre_archivo2="testaArchivo2";
+		String nombre_archivo3="testaArchivo3";
 		try
 		{
 			PrintWriter pw = new PrintWriter(nombre_archivo);
-			pw.write("32 43 34 564 23 134 64 2 432");
+			pw.write("3 5 2 8 7");
 			pw.flush();
+			
+			PrintWriter pw2 = new PrintWriter(nombre_archivo2);
+			pw2.write("10 15 20");
+			pw2.flush();
+			
+			PrintWriter pw3 = new PrintWriter(nombre_archivo3);
+			pw3.write("22 20 31 11");
+			pw3.flush();
 			
 			
 		}catch(Exception e)
@@ -166,7 +176,9 @@ public class Evaluar {
 			
 		}
 		
-		assertEquals("Error ejecutando getNumeroMenor(nombre_archivo)", 2, Ejercicios.getNumeroMenor(nombre_archivo));
+		assertEquals("Error", 5, Ejercicios.getPromedio(nombre_archivo));
+		assertEquals("Error", 15, Ejercicios.getPromedio(nombre_archivo2));
+		assertEquals("Error", 21, Ejercicios.getPromedio(nombre_archivo3));
 	}
 
 }

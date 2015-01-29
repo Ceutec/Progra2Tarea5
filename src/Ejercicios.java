@@ -35,15 +35,15 @@ public class Ejercicios {
 		return -1;
 	}
 	
-	//Devuelve si el archivo con nombre nombre_archivo contiene la string buscada
-	static boolean existe(String nombre_archivo, String buscada)
+	//Devuelve la cantidad de veces que buscada (dado) existe en el archivo con nombre nombre_archivo (dado)
+	static int contar(String nombre_archivo, String buscada)
 	{
-		return false;
+		return -1;
 	}
 	
-	//Devuelve el numero menor de un archivo
-	//Dado, el archivo unicamente contiene enteros
-	static int getNumeroMenor(String nombre_archivo)
+	//Devuelve el promedio de los numeros almacenados en un archivo
+	//Nota: el archivo unicamente contiene enteros
+	static int getPromedio(String nombre_archivo)
 	{
 		return -1;
 	}
